@@ -4,7 +4,6 @@
 /* Demo / Generator : vincentgarreau.com/particles.js
 /* GitHub : github.com/VincentGarreau/particles.js
 /* How to use? : Check the GitHub README
-/* v2.0.0
 /* ----------------------------------------------- */
 
 var pJS = function(tag_id, params){
@@ -1412,19 +1411,21 @@ var pJS = function(tag_id, params){
 };
 
 /* ---------- global functions - vendors ------------ */
-
-Object.deepExtend = function(destination, source) {
+// Edited by kuankuan2007 at 2023/7/9
+function _deepExtend(destination, source) {
   for (var property in source) {
     if (source[property] && source[property].constructor &&
      source[property].constructor === Object) {
       destination[property] = destination[property] || {};
-      arguments.callee(destination[property], source[property]);
+      // arguments.callee(destination[property], source[property]); //No longer conforms to ES5 strict mode
+      _deepExtend(destination[property], source[property]); 
     } else {
       destination[property] = source[property];
     }
   }
   return destination;
 };
+Object.deepExtend = _deepExtend;
 
 window.requestAnimFrame = (function(){
   return  window.requestAnimationFrame ||
