@@ -1,6 +1,6 @@
 ## particles.js
 
-**Warning**, this file has been modified by the author himself to be compatible with strict mode and the modular Es Module
+**Warning**, it has been modified by the author himself to be compatible with strict mode and the modular Es Module
 this behavior (MIT) https://opensource.org/license/mit/ and follow the original open source licenses have been granted to modify (modify) right,
 see https://github.com/kuankuan2007/particles.js/tree/kuankuan2007 for repositorie
 
